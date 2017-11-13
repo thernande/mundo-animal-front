@@ -7,4 +7,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  public icon: string;
+
+  constructor(
+  ){
+  	this.icon = "indent";
+  }
+
+  changeIcon(){
+    if(this.icon == "indent"){
+      this.icon = "outdent";
+    }
+    else{
+      this.icon = "indent";
+    }
+  }
 }

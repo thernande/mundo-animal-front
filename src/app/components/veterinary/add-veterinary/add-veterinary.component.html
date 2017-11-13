@@ -1,0 +1,30 @@
+
+<h3>{{title}}</h3>
+<form #formAddVeterinary="ngForm">
+  <div class="form-row">
+    <div class="form-group col">
+      <label>Nombre</label>
+      <input class="form-control" type="text" #name="ngModel" [(ngModel)]="veterinary.name" required="required"/>
+    </div>
+    <div class="form-group col">
+      <label>Telefono</label>
+      <input class="form-control" type="text" #phone="ngModel" [(ngModel)]="veterinary.phone" placeholder="ej: 47851778" required="required"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Correo Electronico</label>
+    <input class="form-control" type="email" #email="ngModel" [(ngModel)]="veterinary.email" placeholder="ej: caninos@gmail.com"/>
+  </div>
+  <div class="form-group">
+    <label>Direccion</label>
+    <input class="form-control" type="text" #adress="ngModel" [(ngModel)]="veterinary.adress" placeholder="ej: cra 82 N 42 36" required="required"/>
+  </div>
+  <div class="form-group">
+    <label>Foto de la veterinaria</label>
+    <input class="form-control-file" type="file" placeholder="Subir foto..." (change)="fileChangeEvent($event)"/>
+    <p class="text-muted">Max 3 MB</p>
+  </div>
+  <div class="form-group">
+    <input class="btn btn-success" type="submit" value="{{title}}"/>
+  </div>
+</form>

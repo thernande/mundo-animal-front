@@ -1,0 +1,48 @@
+<div class="col-lg-10">
+	<h3>{{title}}</h3>
+
+	<div class="alert alert-{{status}}" *ngIf="status">
+		{{message}}
+	</div>
+
+	<form #formAdd="ngForm" (ngSubmit)="onSubmit()">
+
+		<div class="form-group">
+			<label>Nombre</label>
+			<input type="text" name="name" #name="ngModel" [(ngModel)]="animal.name" class="form-control" required />
+			<span class="label label-danger" *ngIf="!name.valid && name.touched">
+				<strong>el nombre es obligatorio</strong>
+			</span>
+		</div>
+
+		<div class="form-group">
+			<label>Descripcion</label>
+			<input type="text" name="description" #description="ngModel" [(ngModel)]="animal.description"  class="form-control" required />
+			<span class="label label-danger" *ngIf="!description.valid && description.touched">
+				<strong>la description es obligatoria</strong>
+			</span>
+		</div>
+
+		<div class="form-group">
+			<label>Año</label>
+			<input type="text" name="year" #year="ngModel" [(ngModel)]="animal.year" class="form-control" required />
+			<span class="label label-danger" *ngIf="!year.valid && year.touched">
+				<strong>el año es obligatoria</strong>
+			</span>
+		</div>
+
+		<div *ngIf="edit && animal.image">
+			<img src="{{url + '/get-image-file-animal/' + animal.image}}" class="img-responsive img-thumbnail" />
+		</div>
+
+		<div class="form-group">
+			<label>Imagen del animal</label>
+			<input type="file" placeholder="subir imagen..." (change)="fileChangeEvent($event)" />
+		</div>
+
+		<div class="form-group">
+			<input type="submit" value="{{title}}" class="btn btn-success" />
+		</div>
+	</form>
+
+</div>
