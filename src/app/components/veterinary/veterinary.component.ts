@@ -20,20 +20,20 @@ export class VeterinaryComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.getVeterinaries();
+    //this.getVeterinaries();
   }
 
-  getVeterinaries(){
-    this._veterinaryService.getVeterinaries().subscribe( 
-      response => {
-        if(response.veterinaries){
-          this.veterinary = JSON.parse(response.veterinaries);
-        }
-      },
-      error => {
-        console.log(<any>error);
-      }
-     );
-  }
+  // getVeterinaries(){
+  //   this._veterinaryService.getVeterinaries().subscribe( 
+  //     response => {
+  //       if(response.veterinaries){
+  //         this.veterinary = JSON.parse(response.veterinaries);
+  //       }
+  //     },
+  //     error => {
+  //       console.log(<any>error);
+  //     }
+  //    );
+  // }
 
 }

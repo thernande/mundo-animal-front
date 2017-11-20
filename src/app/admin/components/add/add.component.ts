@@ -26,7 +26,7 @@ export class AddComponent implements OnInit {
     private _userService: UserService,
     private _uploadService: UploadService
   ) {
-    this.title = 'Añadir';
+    this.title = 'Añadir Usuario';
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
     this.url = GLOBAL.url;
@@ -34,10 +34,8 @@ export class AddComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('animal-add componente cargado');
+    console.log('user-add componente cargado');
   }
-
-
 
   public filesToUpload: Array<File>;
   fileChangeEvent(fileInput:any){

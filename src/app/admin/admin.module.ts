@@ -9,6 +9,7 @@ import { MainComponent } from './components/main/main.component';
 import { ListComponent } from './components/list/list.component';
 import { AddComponent } from './components/add/add.component';
 import { EditComponent } from './components/edit/edit.component';
+import { LoginComponent } from './components/login/login.component';
 
 //servicios
 import { AdminGuard } from '../services/admin.guard';
@@ -27,13 +28,15 @@ import { SearchPipe } from './pipes/search.pipe';
   	ListComponent,
   	AddComponent,
   	EditComponent,
-    SearchPipe
+    SearchPipe,
+    LoginComponent
   ],
   exports: [
   	MainComponent,
   	ListComponent,
   	AddComponent,
-  	EditComponent
+    EditComponent,
+    LoginComponent
   ],
   providers: [AdminGuard, UserService]
 })

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { routing, appRoutingProviders } from './app.routing';
 
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { NewsComponent } from './components/news/news.component';
 import { AdminModule } from './admin/admin.module';
 import { EventComponent } from './components/event/event.component';
 import { AddVeterinaryComponent } from './components/veterinary/add-veterinary/add-veterinary.component';
+import { ListVeterinaryComponent } from './components/veterinary/list-veterinary/list-veterinary.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +24,14 @@ import { AddVeterinaryComponent } from './components/veterinary/add-veterinary/a
     HomeComponent,
     NewsComponent,
     EventComponent,
-    AddVeterinaryComponent
+    AddVeterinaryComponent,
+    ListVeterinaryComponent
   ],
   imports: [
     BrowserModule,
     routing,
     HttpModule,
+    HttpClientModule,
     FormsModule,
     AdminModule
   ],

@@ -9,6 +9,8 @@ import { NewsComponent } from './components/news/news.component';
 import { VeterinaryComponent } from './components/veterinary/veterinary.component';
 //children of veterinary
 import { AddVeterinaryComponent } from './components/veterinary/add-veterinary/add-veterinary.component';
+import { ListVeterinaryComponent } from './components/veterinary/list-veterinary/list-veterinary.component';
+
 
 const appRoutes: Routes = [
 	{path: '', component: HomeComponent},
@@ -19,7 +21,8 @@ const appRoutes: Routes = [
 		path:'veterinary', 
 		component: VeterinaryComponent,
 		children: [
-			{ path: '**', redirectTo: 'veterinary'},
+			{ path: '', redirectTo: '/veterinary/list', pathMatch: 'full'},
+			{ path: 'list', component: ListVeterinaryComponent },
 			{ path: 'add', component: AddVeterinaryComponent }
 		]
 	},
