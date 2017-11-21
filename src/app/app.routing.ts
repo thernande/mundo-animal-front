@@ -6,10 +6,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { NewsComponent } from './components/news/news.component';
+
 import { VeterinaryComponent } from './components/veterinary/veterinary.component';
 //children of veterinary
 import { AddVeterinaryComponent } from './components/veterinary/add-veterinary/add-veterinary.component';
 import { ListVeterinaryComponent } from './components/veterinary/list-veterinary/list-veterinary.component';
+import { DetailVeterinaryComponent } from './components/veterinary/detail-veterinary/detail-veterinary.component';
 
 
 const appRoutes: Routes = [
@@ -23,7 +25,8 @@ const appRoutes: Routes = [
 		children: [
 			{ path: '', redirectTo: '/veterinary/list', pathMatch: 'full'},
 			{ path: 'list', component: ListVeterinaryComponent },
-			{ path: 'add', component: AddVeterinaryComponent }
+			{ path: 'add', component: AddVeterinaryComponent },
+			{ path: 'detail', component: DetailVeterinaryComponent }
 		]
 	},
 	{path:'news', component: NewsComponent},

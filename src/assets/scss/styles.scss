@@ -1,4 +1,5 @@
 $backgroung-color:  #FFF8DC;
+$card-background: #ccffcc;
 
 body{
 	background-color: $backgroung-color !important;
@@ -25,6 +26,21 @@ body{
 				text-decoration: none;
 			}
 		}
+	}
+}
+
+ul.list{
+
+	background-color: $card-background;
+
+	img.d-flex{
+		width: 200px;
+		height: 150px;
+	}
+	
+	p.lead{
+		font-size: 1rem !important;
+		margin-bottom: 0.75rem;
 	}
 }
 

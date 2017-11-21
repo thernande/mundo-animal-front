@@ -14,6 +14,15 @@ body {
     color: white;
     text-decoration: none; }
 
+ul.list {
+  background-color: #ccffcc; }
+  ul.list img.d-flex {
+    width: 200px;
+    height: 150px; }
+  ul.list p.lead {
+    font-size: 1rem !important;
+    margin-bottom: 0.75rem; }
+
 .jumbotron {
   padding: 40px;
   border-radius: 5px;

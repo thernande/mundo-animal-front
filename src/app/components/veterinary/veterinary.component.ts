@@ -1,39 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { Veterinary } from '../../models/veterinary';
 import { VeterinaryService } from '../../services/veterinary.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-veterinary',
   templateUrl: './veterinary.component.html',
   styleUrls: ['./veterinary.component.css'],
-  providers: [ VeterinaryService ]
+  providers: [ VeterinaryService, UserService ]
 })
 export class VeterinaryComponent implements OnInit {
   public veterinary: Veterinary[];
   public title: string;
+  public identity;
 
   constructor(
     private _veterinaryService: VeterinaryService,
-
+    private _userService: UserService
   ) {
     this.title = "Directorio";
+    this.identity = this._userService.getIdentity();
    }
 
-  ngOnInit() {
-    //this.getVeterinaries();
+  ngOnInit(){
   }
-
-  // getVeterinaries(){
-  //   this._veterinaryService.getVeterinaries().subscribe( 
-  //     response => {
-  //       if(response.veterinaries){
-  //         this.veterinary = JSON.parse(response.veterinaries);
-  //       }
-  //     },
-  //     error => {
-  //       console.log(<any>error);
-  //     }
-  //    );
-  // }
-
 }

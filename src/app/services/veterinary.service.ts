@@ -15,7 +15,7 @@ export class VeterinaryService {
    }
 
    getVeterinaries(){
-     return this._http.get(this.url+'/get-veterinaries');
+     return this._http.get(this.url+'/get-veterinaries').map( res => res.json() );
    }
 
    addVeterinary(token, veterinary): Observable<any>{

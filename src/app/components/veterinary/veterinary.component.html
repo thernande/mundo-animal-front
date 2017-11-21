@@ -1,4 +1,9 @@
 
-<div class="border border-success">
-  <router-outlet></router-outlet>
+<div class="row">
+  <div class="col-2" *ngIf="identity.role == 'ROLE_ADMIN'"><a class="btn btn-outline-success mb-2" [routerLink]="['/veterinary/add']">Añadir Veterinaria</a><a class="btn btn-outline-success" [routerLink]="['/veterinary/list']">Lista de Veterinaria</a></div>
+  <div class="col-lg-9">
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>

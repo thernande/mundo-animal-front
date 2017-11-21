@@ -15,6 +15,7 @@ import { AdminModule } from './admin/admin.module';
 import { EventComponent } from './components/event/event.component';
 import { AddVeterinaryComponent } from './components/veterinary/add-veterinary/add-veterinary.component';
 import { ListVeterinaryComponent } from './components/veterinary/list-veterinary/list-veterinary.component';
+import { DetailVeterinaryComponent } from './components/veterinary/detail-veterinary/detail-veterinary.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ListVeterinaryComponent } from './components/veterinary/list-veterinary
     NewsComponent,
     EventComponent,
     AddVeterinaryComponent,
-    ListVeterinaryComponent
+    ListVeterinaryComponent,
+    DetailVeterinaryComponent
   ],
   imports: [
     BrowserModule,

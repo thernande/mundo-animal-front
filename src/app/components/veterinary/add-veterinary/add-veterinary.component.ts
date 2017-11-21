@@ -39,46 +39,48 @@ export class AddVeterinaryComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('animal-add componente cargado');
+    // console.log('animal-add componente cargado');
   }
 
   onSubmit(){
     //console.log(this.veterinary);
-
-    this._veterinaryService.addVeterinary(this.token, this.veterinary).subscribe(
-      response => {
-        console.log(response);
-        if(!response.veterinaryStored){
-          this.status = "danger";
-          this.message = "no se pudo guardar la veterinaria";
-        }
-        else{
-          this.veterinary = response.veterinaryStored;
-
-          //subir la imagen de la veterinaria
-          if(this.filesToUpload == null){
+    if(this.filesToUpload == null){
+      this.status = "danger";
+      this.message = "no hay imagen de la veterinaria";
+    }
+    else{
+      this._veterinaryService.addVeterinary(this.token, this.veterinary).subscribe(
+        response => {
+          // console.log(response);
+          if(!response.veterinaryStored){
             this.status = "danger";
-            this.message = "no se guardo la imagen del animal";
-          }else{
-            this._uploadService.makeFileRequest(this.url+'/upload-image-veterinary/'+this.veterinary._id, [], this.filesToUpload, this.token, 'image')
-              .then((result: any) => {
-                this.veterinary.image = result.image;
-                console.log(this.veterinary);
-                //this._router.navigate(['/veterinary/list']);
-              }
-            );
+            this.message = "no se pudo guardar la veterinaria";
           }
-
+          else{
+            this.veterinary = response.veterinaryStored;
+  
+            //subir la imagen de la veterinaria
+              this._uploadService.makeFileRequest(this.url+'/upload-image-veterinary/'+this.veterinary._id, [], this.filesToUpload, this.token, 'image')
+                .then((result: any) => {
+                  this.veterinary.image = result.image;
+                  // console.log(this.veterinary);
+                  this._router.navigate(['/veterinary/list']);
+                }
+              );
+            
+  
+          }
+        },
+        error => {
+          var errorMessage = <any>error;
+          if(errorMessage != null){
+            this.status = 'danger';
+            this.message = 'error';
+          }
         }
-      },
-      error => {
-        var errorMessage = <any>error;
-        if(errorMessage != null){
-          this.status = 'danger';
-          this.message = 'error';
-        }
-      }
-    );
+      );
+    }
+    
   }
 
   

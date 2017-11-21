@@ -1,3 +1,17 @@
-<p>
-  list-veterinary works!
-</p>
+
+<h3>{{title}}
+  <div class="row">
+    <div class="col-md-5" *ngFor="let veterinary of veterinaries">
+      <ul class="list">
+        <li class="media"><img class="d-flex float-left mr-1" src="{{url + '/get-image-file-veterinary/' + veterinary.image}}"/>
+          <div class="media-body">
+            <h5>{{veterinary.name}}</h5>
+            <p class="lead">Dir: {{veterinary.adress}}</p>
+            <p class="lead">tel: {{veterinary.phone}}</p>
+            <p class="lead">email: {{veterinary.email}}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</h3>
