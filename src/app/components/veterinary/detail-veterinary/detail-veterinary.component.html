@@ -1,3 +1,16 @@
-<p>
-  detail-veterinary works!
-</p>
+
+<div class="row">
+  <div class="col-md-5 col-sm-12 col-lg-4"><img class="btn-block img-responsive img-thumbnail mr-2 mb-2" src="{{url + '/get-image-file-veterinary/' + veterinary.image}}"/></div>
+  <div class="col-md-7 col-sm-12 col-lg-8">
+    <div class="card text-center">
+      <div class="card-header"> 
+        <h3><strong>{{veterinary.name}}</strong></h3>
+      </div>
+      <div class="card-body">
+        <h5 class="card-text">TELEFONO: {{veterinary.phone}}</h5>
+        <h5 class="card-text">EMAIL: {{veterinary.email}}</h5>
+        <h5 class="card-text">DIRECCION: {{veterinary.adress}}</h5>
+      </div>
+    </div>
+  </div>
+</div>

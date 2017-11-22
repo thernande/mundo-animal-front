@@ -1,9 +1,9 @@
 body {
-  background-color: #FFF8DC !important; }
+  background-color: #ede0d4 !important; }
 
 .navbar.navbar-expand-lg {
   opacity: 0.8;
-  background-color: #dcb000; }
+  background-color: #895f39; }
   .navbar.navbar-expand-lg .navbar-toggler {
     cursor: pointer; }
   .navbar.navbar-expand-lg .navbar-brand a {
@@ -15,10 +15,17 @@ body {
     text-decoration: none; }
 
 ul.list {
-  background-color: #ccffcc; }
+  background-color: #28a745;
+  color: white; }
   ul.list img.d-flex {
     width: 200px;
     height: 150px; }
+  ul.list h5 a {
+    text-decoration: none;
+    color: white; }
+  ul.list h5 a:hover {
+    border-bottom: 3px solid #A5682A;
+    transition: all 700ms; }
   ul.list p.lead {
     font-size: 1rem !important;
     margin-bottom: 0.75rem; }
@@ -29,7 +36,7 @@ ul.list {
   box-shadow: 2px 4px 1px #ccc; }
 
 .navbar-nav a.active {
-  border-bottom: 3px solid rgba(165, 42, 42, 0.575) !important; }
+  border-bottom: 3px solid #A5682A !important; }
 
 .navbar .navbar-nav > li {
   margin-right: 15px; }
@@ -37,8 +44,8 @@ ul.list {
 .carousel-item > img {
   height: 300px; }
 
-.navbar-nav > li > a:hover {
-  border-bottom: 3px solid rgba(165, 42, 42, 0.575);
+.navbar-nav li a:hover {
+  border-bottom: 3px solid #A5682A;
   transition: all 700ms; }
 
 .button_transition {

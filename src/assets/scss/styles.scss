@@ -1,5 +1,6 @@
-$backgroung-color:  #FFF8DC;
-$card-background: #ccffcc;
+$backgroung-color:  #ede0d4;
+$card-background: #28a745;
+$brown: #A5682A;
 
 body{
 	background-color: $backgroung-color !important;
@@ -32,12 +33,27 @@ body{
 ul.list{
 
 	background-color: $card-background;
-
+	color: white;
+	
 	img.d-flex{
 		width: 200px;
 		height: 150px;
 	}
-	
+
+	h5{
+
+		a{
+			text-decoration: none;
+			color: white;
+		}
+
+		a:hover{
+			border-bottom: 3px solid $brown;
+			transition: all 700ms;
+		}
+
+	}
+
 	p.lead{
 		font-size: 1rem !important;
 		margin-bottom: 0.75rem;
@@ -52,7 +68,7 @@ ul.list{
 }
 
 .navbar-nav a.active{
-	border-bottom: 3px solid rgba(165, 42, 42, 0.575) !important;
+	border-bottom: 3px solid $brown !important;
 }
 .navbar .navbar-nav > li{
 	margin-right: 15px;
@@ -66,10 +82,15 @@ ul.list{
 
 
 
-.navbar-nav > li > a:hover{
-	border-bottom: 3px solid rgba(165, 42, 42, 0.575);
-	transition: all 700ms;
-}
+.navbar-nav {
+	li 
+		{
+			a:hover{
+				border-bottom: 3px solid $brown;
+				transition: all 700ms;
+		}
+	}
+} 
 
 .button_transition{
 	padding: 10px;

@@ -23,5 +23,8 @@ export class VeterinaryComponent implements OnInit {
    }
 
   ngOnInit(){
+    if(this.identity == null){
+      this.identity = 'nada';
+    }
   }
 }

@@ -1,5 +1,6 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminGuard } from './services/admin.guard';
 
 //Components
 
@@ -25,8 +26,12 @@ const appRoutes: Routes = [
 		children: [
 			{ path: '', redirectTo: '/veterinary/list', pathMatch: 'full'},
 			{ path: 'list', component: ListVeterinaryComponent },
-			{ path: 'add', component: AddVeterinaryComponent },
-			{ path: 'detail', component: DetailVeterinaryComponent }
+			{ 
+				path: 'add', 
+				component: AddVeterinaryComponent,
+				canActivate: [AdminGuard]
+			},
+			{ path: 'detail/:id', component: DetailVeterinaryComponent }
 		]
 	},
 	{path:'news', component: NewsComponent},
