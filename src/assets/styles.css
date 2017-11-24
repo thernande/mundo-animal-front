@@ -26,9 +26,22 @@ ul.list {
   ul.list h5 a:hover {
     border-bottom: 3px solid #A5682A;
     transition: all 700ms; }
-  ul.list p.lead {
-    font-size: 1rem !important;
-    margin-bottom: 0.75rem; }
+
+.card img.d-flex {
+  width: 100%;
+  height: 150px; }
+
+.card h5 a {
+  text-decoration: none;
+  color: white; }
+
+.card h5 a:hover {
+  border-bottom: 3px solid #A5682A;
+  transition: all 700ms; }
+
+.card p.card-text {
+  font-size: 1rem !important;
+  margin-bottom: 0.75rem; }
 
 .jumbotron {
   padding: 40px;

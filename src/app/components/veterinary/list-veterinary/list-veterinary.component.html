@@ -2,16 +2,16 @@
 <h3>{{title}}
   <div class="row">
     <div class="col-md-5 col-sm-12 col-lg-4" *ngFor="let veterinary of veterinaries">
-      <ul class="list">
-        <li class="media"><a [routerLink]="['/veterinary/detail/' , veterinary._id]"> <img class="d-flex float-left mr-1" src="{{url + '/get-image-file-veterinary/' + veterinary.image}}"/></a>
-          <div class="media-body">
-            <h5> <a class="text-black" [routerLink]="['/veterinary/detail/' , veterinary._id]">{{veterinary.name}}</a></h5>
-            <p class="lead">tel: {{veterinary.phone}}</p>
-            <p class="lead">email: {{veterinary.email}}</p>
-            <p class="lead"> {{veterinary.adress}}</p>
-          </div>
-        </li>
-      </ul>
+      <div class="card bg-success mb-3 text-white"><a class="card-img-top" [routerLink]="['/veterinary/detail/' , veterinary._id]"> <img class="d-flex float-left" src="{{url + '/get-image-file-veterinary/' + veterinary.image}}" alt="{{veterinary.name}}"/></a>
+        <div class="card-header">
+          <h5 class="card-title"> <a [routerLink]="['/veterinary/detail/' , veterinary._id]">{{veterinary.name}}</a></h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text">tel: {{veterinary.phone}}</p>
+          <p class="card-text">email: {{veterinary.email}}</p>
+          <p class="card-text"> {{veterinary.adress}}</p><a class="btn btn-warning" [routerLink]="['/veterinary/edit/' , veterinary._id]" *ngIf="identity.role == 'ROLE_ADMIN'">Editar Veterinaria</a>
+        </div>
+      </div>
     </div>
   </div>
 </h3>

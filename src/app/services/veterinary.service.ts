@@ -18,6 +18,10 @@ export class VeterinaryService {
      return this._http.get(this.url+'/get-veterinaries').map( res => res.json() );
    }
 
+   getVeterinary(id){
+    return this._http.get(this.url+'/get-veterinary/'+id).map( res => res.json() );
+   }
+
    addVeterinary(token, veterinary){
     let params = JSON.stringify(veterinary);
     let headers = new Headers(
@@ -30,10 +34,6 @@ export class VeterinaryService {
     return this._http.post(this.url+'/save-veterinary', params, {headers: headers}).map( res => res.json() );
    }
 
-   getVeterinary(id){
-    return this._http.get(this.url+'/get-veterinary/'+id).map( res => res.json() );
-   }
-
    updateVeterinary(token, id, veterinary){
     let params = JSON.stringify(veterinary);
     let headers = new Headers({
@@ -43,4 +43,5 @@ export class VeterinaryService {
 
     return this._http.put(this.url+"/update-veterinary/"+id, params, {headers: headers}).map(res => res.json());
   }
+
 }

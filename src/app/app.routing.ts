@@ -13,6 +13,7 @@ import { VeterinaryComponent } from './components/veterinary/veterinary.componen
 import { AddVeterinaryComponent } from './components/veterinary/add-veterinary/add-veterinary.component';
 import { ListVeterinaryComponent } from './components/veterinary/list-veterinary/list-veterinary.component';
 import { DetailVeterinaryComponent } from './components/veterinary/detail-veterinary/detail-veterinary.component';
+import { EditVeterinaryComponent } from './components/veterinary/edit-veterinary/edit-veterinary.component';
 
 
 const appRoutes: Routes = [
@@ -29,6 +30,11 @@ const appRoutes: Routes = [
 			{ 
 				path: 'add', 
 				component: AddVeterinaryComponent,
+				canActivate: [AdminGuard]
+			},
+			{ 
+				path: 'edit/:id', 
+				component: EditVeterinaryComponent,
 				canActivate: [AdminGuard]
 			},
 			{ path: 'detail/:id', component: DetailVeterinaryComponent }
