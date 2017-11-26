@@ -10,7 +10,7 @@ import { UserService } from '../../../services/user.service';
   styleUrls: ['./list-veterinary.component.css']
 })
 export class ListVeterinaryComponent implements OnInit {
-  public veterinaries: Veterinary;
+  public veterinaries: Veterinary[];
   public title: string;
   public url: string;
   public identity;

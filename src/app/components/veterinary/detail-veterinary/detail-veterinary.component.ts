@@ -22,6 +22,7 @@ export class DetailVeterinaryComponent implements OnInit {
     private _veterinaryService:VeterinaryService
   ) {
       this.url = GLOBAL.url;
+      this.veterinary = new Veterinary('','','','','','');
    }
 
   ngOnInit() {

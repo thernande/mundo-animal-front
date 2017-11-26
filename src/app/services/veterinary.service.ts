@@ -30,7 +30,7 @@ export class VeterinaryService {
         'Authorization': token
       }
     );
-    console.log(params);
+    // console.log(params);
     return this._http.post(this.url+'/save-veterinary', params, {headers: headers}).map( res => res.json() );
    }
 

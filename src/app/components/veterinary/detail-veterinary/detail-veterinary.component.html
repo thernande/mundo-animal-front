@@ -1,6 +1,10 @@
 
+<ol class="bg breadcrumb">
+  <li class="breadcrumb-item"><a class="text" [routerLink]="['/veterinary']">Directorio</a></li>
+  <li class="breadcrumb-item">{{veterinary.name}}</li>
+</ol>
 <div class="row">
-  <div class="col-md-5 col-sm-12 col-lg-4"><img class="btn-block img-responsive img-thumbnail mr-2 mb-2" src="{{url + '/get-image-file-veterinary/' + veterinary.image}}"/></div>
+  <div class="col-md-5 col-sm-12 col-lg-4 mb-2"><img class="btn-block img-responsive img-thumbnail mr-2" src="{{url + '/get-image-file-veterinary/' + veterinary.image}}"/></div>
   <div class="col-md-7 col-sm-12 col-lg-8">
     <div class="card text-center">
       <div class="card-header"> 

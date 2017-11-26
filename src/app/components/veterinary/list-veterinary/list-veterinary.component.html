@@ -2,14 +2,22 @@
 <h3>{{title}}
   <div class="row">
     <div class="col-md-5 col-sm-12 col-lg-4" *ngFor="let veterinary of veterinaries">
-      <div class="card bg-success mb-3 text-white"><a class="card-img-top" [routerLink]="['/veterinary/detail/' , veterinary._id]"> <img class="d-flex float-left" src="{{url + '/get-image-file-veterinary/' + veterinary.image}}" alt="{{veterinary.name}}"/></a>
+      <div class="card mb-3"><a class="card-img-top" [routerLink]="['/veterinary/detail/' , veterinary._id]"> <img class="d-flex float-left" src="{{url + '/get-image-file-veterinary/' + veterinary.image}}" alt="{{veterinary.name}}"/></a>
         <div class="card-header">
-          <h5 class="card-title"> <a [routerLink]="['/veterinary/detail/' , veterinary._id]">{{veterinary.name}}</a></h5>
+          <h5 class="card-title"> 
+            <label class="fa fa-hospital-o mr-2"></label><a [routerLink]="['/veterinary/detail/' , veterinary._id]">{{veterinary.name}}</a>
+          </h5>
         </div>
         <div class="card-body">
-          <p class="card-text">tel: {{veterinary.phone}}</p>
-          <p class="card-text">email: {{veterinary.email}}</p>
-          <p class="card-text"> {{veterinary.adress}}</p><a class="btn btn-warning" [routerLink]="['/veterinary/edit/' , veterinary._id]" *ngIf="identity.role == 'ROLE_ADMIN'">Editar Veterinaria</a>
+          <p class="card-text">
+            <label class="fa fa-phone mr-2"></label>{{veterinary.phone}}
+          </p>
+          <p class="card-text">
+            <label class="fa fa-envelope-o mr-2"></label>{{veterinary.email}}
+          </p>
+          <p class="card-text"> 
+            <label class="fa fa-address-card-o mr-2"></label>{{veterinary.adress}}
+          </p><a class="btn btn-warning" [routerLink]="['/veterinary/edit/' , veterinary._id]" *ngIf="identity.role == 'ROLE_ADMIN'">Editar Veterinaria</a>
         </div>
       </div>
     </div>
