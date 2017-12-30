@@ -1,0 +1,17 @@
+h3 {{titlePage}}
+
+div(class="alert alert-{{status}}" "*ngIf"="status") {{message}}
+
+form('#formAddNews' = "ngForm" "(ngSubmit)" = "onSubmit()")
+	.form-group.mb-4
+		label Titulo
+		input.form-control.block-inline(type="text" name="title" "#title"="ngModel" "[(ngModel)]"="news.title" "required" placeholder="ej: hay una nueva vacuna para los perros")
+	.form-group
+		label Descripcion
+		simple-tiny.mb-4("[elementId]"="'my-editor-id'" "someTxt"="{{news.description}}" "(onEditorKeyup)"="textEditor($event)") 
+	.form-group
+		label Foto de la veterinaria
+		input.form-control-file(type="file" placeholder="Subir imagen de la noticia..." "(change)"="fileChangeEvent($event)")
+		p.text-muted Max 3 MB
+	.form-group
+		input.btn.btn-success(type="submit" value="{{titlePage}}")

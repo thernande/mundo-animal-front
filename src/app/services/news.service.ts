@@ -34,7 +34,7 @@ export class NewsService {
    return this._http.post(this.url+'/save-news', params, {headers: headers}).map( res => res.json() );
   }
 
-  updateVeterinary(token, id, news){
+  updateNews(token, id, news){
    let params = JSON.stringify(news);
    let headers = new Headers({
      'Content-Type': 'application/json',

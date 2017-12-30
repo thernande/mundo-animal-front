@@ -1,3 +1,13 @@
-<p>
-  list-news works!
-</p>
+
+<div class="background-notice">
+  <h3><strong>{{titlePage}}</strong></h3>
+  <div class="alert alert-{{status}}" *ngIf="status">{{message}}</div>
+  <div class="col-12" *ngFor="let notice of news">
+    <div class="media py-2 bb"><img class="d-flex float-left img-notice mr-1" src="{{url + '/get-image-file-news/' + notice.image}}" alt="{{notice.name}}"/>
+      <div class="media-body">
+        <h5>{{notice.title}}</h5>
+        <div class="dotdot" [innerHTML]="notice.description"></div><a class="btn btn-outline-success btn-block" [routerLink]="['/news/detail/', notice._id]">Leer Mas</a><a class="btn btn-warning btn-block" [routerLink]="['/news/edit/', notice._id]" *ngIf="identity.role == 'ROLE_ADMIN'">Editar Noticia</a>
+      </div>
+    </div>
+  </div>
+</div>

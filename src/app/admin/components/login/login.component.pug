@@ -1,0 +1,18 @@
+.col-lg-9.container
+	h3 {{title}}
+	div(class="alert alert-{{status}}" "*ngIf"="status") {{message}}
+
+	form.col-lg-5.was-validated("#loginForm"="ngForm" "(ngSubmit)"="onSubmit()")
+		.form-group
+			label Correo Electronico
+			input(class="form-control" type="email" "#email"="ngModel" "[(ngModel)]"="user.email" name="email" required)
+
+			span.invalid-feedback("*ngIf"!="!email.valid && email.touched") el email es obligatorio
+
+		.form-group
+			label Password
+			input(class="form-control" type="password" "#pass"="ngModel" "[(ngModel)]"="user.pass" name="pass" required)
+		
+			span.invalid-feedback("*ngIf"!="!pass.valid && pass.touched") la contraseña es obligatorio
+
+		input.btn.btn-success.btn-block(type="submit" value="Ingresar" "[disabled]"="!loginForm.valid")

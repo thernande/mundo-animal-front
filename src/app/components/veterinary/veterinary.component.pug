@@ -1,0 +1,8 @@
+.row
+	.col-12("*ngIf"="identity.role == 'ROLE_ADMIN'")
+		a.btn.btn-outline-danger.mr-4("[routerLink]"="['add']") Añadir Veterinaria
+		a.btn.btn-outline-danger.ml-4("[routerLink]"="['list']") Lista de Veterinaria
+
+	.col-12.justify-content-center
+		.container
+			router-outlet

@@ -1,0 +1,28 @@
+h3 {{title}}
+
+div(class="alert alert-{{status}}" "*ngIf"="status") {{message}}
+
+form( '#formAddVeterinary' = 'ngForm' "(ngSubmit)"="onSubmit()" )
+    .form-row
+        .form-group.col
+            label Nombre
+            input.form-control(type="text" name="nombre" "#name"="ngModel" "[(ngModel)]"="veterinary.name" "required" placeholder="ej: veterinaria amigos de los animales")
+        .form-group.col
+            label Telefono
+            input.form-control(type="text" name="phone" "#phone"="ngModel" "[(ngModel)]"="veterinary.phone" placeholder="ej: 47851778" "required")
+    .form-group
+        label Correo Electronico
+        input.form-control(type="email" name="email" "#email"="ngModel" "[(ngModel)]"="veterinary.email" placeholder="ej: caninos@gmail.com")
+    .form-group
+        label Direccion
+        input.form-control(type="text" name="adress" "#adress"="ngModel" "[(ngModel)]"="veterinary.adress" placeholder="ej: cra 82 N 42 36" "required")
+    
+    div("*ngIf"="veterinary.image != ''")
+        img.img-fluid.img-thumbnail.border.border-success(src="{{url + '/get-image-file-veterinary/' + veterinary.image}}")
+
+    .form-group
+        label Foto de la veterinaria
+        input.form-control-file(type="file" placeholder="Subir foto..." "(change)"="fileChangeEvent($event)")
+        p.text-muted Max 3 MB
+    .form-group
+        input.btn.btn-success(type="submit" value="{{title}}")

@@ -1,0 +1,35 @@
+nav.navbar.navbar-expand-lg.fixed-top
+	.container-fluid
+		.navbar-brand
+			img.logo.d-inline-block.align-top(src="assets/images/logo1.png")
+			a("[routerLink]"="['/home']") Mundo Animal
+
+		button.navbar-toggler("(click)"="changeIcon()" type="button" data-toggle="collapse" data-target="#collapsibleNavbar")
+			a.d-inline-block.align-top Menu
+			i(class="fa fa-{{icon}}" aria-hidden="true")
+
+		#collapsibleNavbar.collapse.navbar-collapse
+			ul.navbar-nav.ml-auto
+				li.nav-item
+					a("[routerLinkActive]"="['active']" "[routerLink]"="['/news']") Noticias
+				li.nav-item
+					a("[routerLinkActive]"="['active']" "[routerLink]"="['/veterinary']") Directorio
+				li.nav-item
+					a("[routerLinkActive]"="['active']" "[routerLink]"="['/contact']") Contacto
+
+.container-fluid(style="margin-top:70px")
+	router-outlet
+footer.footer.fixed-bottom
+	.container-fluid
+		.row.text-center
+			.col
+				h4 Creadores
+				p.m-0 Tulio Ernesto Hernandez Preciado
+				p.m-0 Alejandro Fernandez
+			.col
+				h4 Telefono
+				p.m-0 +57 3117032424
+				p.m-0 +57 3103865176
+			.col
+				h4 Correo Electronico
+				p.m-0 info@mi-mundo-animal.com

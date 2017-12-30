@@ -1,0 +1,17 @@
+ol.bg.breadcrumb
+	li.breadcrumb-item
+		a.text("[routerLink]"="['/veterinary']") Directorio
+	li.breadcrumb-item {{veterinary.name}}
+	
+.row
+	.col-md-5.col-sm-12.col-lg-4.mb-2
+		img.btn-block.img-responsive.img-thumbnail.mr-2(src="{{url + '/get-image-file-veterinary/' + veterinary.image}}")
+	.col-md-7.col-sm-12.col-lg-8
+		.card.text-center
+			.card-header 
+				h3
+					strong {{veterinary.name}}
+			.card-body
+				h5.card-text TELEFONO: {{veterinary.phone}}
+				h5.card-text EMAIL: {{veterinary.email}}
+				h5.card-text DIRECCION: {{veterinary.adress}}

@@ -20,6 +20,12 @@ import { EditVeterinaryComponent } from './components/veterinary/edit-veterinary
 import { AddNewsComponent } from './components/news/add-news/add-news.component';
 import { ListNewsComponent } from './components/news/list-news/list-news.component';
 
+
+import { SimpleTinyComponent } from './components/simple-tiny/simple-tiny.component';
+import { EllipsisPipe } from './pipe/ellipsis.pipe';
+import { DetailNewsComponent } from './components/news/detail-news/detail-news.component';
+import { EditNewsComponent } from './components/news/edit-news/edit-news.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +39,11 @@ import { ListNewsComponent } from './components/news/list-news/list-news.compone
     DetailVeterinaryComponent,
     EditVeterinaryComponent,
     AddNewsComponent,
-    ListNewsComponent
+    ListNewsComponent,
+    SimpleTinyComponent,
+    EllipsisPipe,
+    DetailNewsComponent,
+    EditNewsComponent
   ],
   imports: [
     BrowserModule,

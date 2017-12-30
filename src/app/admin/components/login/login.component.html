@@ -11,6 +11,6 @@
       <label>Password</label>
       <input class="form-control" type="password" #pass="ngModel" [(ngModel)]="user.pass" name="pass" required="required"/><span class="invalid-feedback" *ngIf="!pass.valid && pass.touched">la contraseña es obligatorio</span>
     </div>
-    <input class="btn btn-success btn-block" type="submit" value="Ingresar"/>
+    <input class="btn btn-success btn-block" type="submit" value="Ingresar" [disabled]="!loginForm.valid"/>
   </form>
 </div>

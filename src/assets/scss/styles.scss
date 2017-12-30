@@ -1,38 +1,73 @@
-$backgroung-color:  #ede0d4;
-$card-background: #28a745;
-$brown: #A5682A;
-
+$color1: #d7ccc8;
+$color2: #fefaec;
+$color3: #388e3c;
+$color4: #3e2723;
+$backgroung-color: $color1;
+$card-background: $color2;
+// #ede0d4 #28a745
 body{
 	background-color: $backgroung-color !important;
+	color: $color4 !important;
 }
 
-.navbar.navbar-expand-lg{
+.all-screen{
+	width: 100%;
+	height: 100%;
+	color: $color3;
+}
+
+.navbar{
 	opacity: 0.8;
-	background-color: darken($backgroung-color, 50%);
+	background-color: $color2;
 	.navbar-toggler{
 		cursor: pointer;
 	}
 	.navbar-brand{
 		a{
 			text-decoration: none;
-			color: white;
+			color: $color4;
 		}
 		
+	}
+	.navbar-toggler{
+		color: $color3;
 	}
 	.navbar-nav{
 		li{
 			a{
 				border-bottom: 3px solid transparent;
-				color: white;
+				color: $color4;
 				text-decoration: none;
+			}
+
+			a.active{
+				border-bottom: 3px solid $color3 !important;
+			}
+
+			a:hover{
+				border-bottom: 3px solid $color3;
+				transition: all 700ms;
 			}
 		}
 	}
 }
 
+footer{
+	background-color: $color2;
+	color: $color4;
+}
+
+.bg{
+	background-color: $color2 !important;
+}
+.text{
+	color: $color3;
+}
+
+
 ul.list{
 
-	background-color: $card-background;
+	background-color: $card-background !important;
 	color: white;
 	
 	img.d-flex{
@@ -48,7 +83,7 @@ ul.list{
 		}
 
 		a:hover{
-			border-bottom: 3px solid $brown;
+			border-bottom: 3px solid $color3;
 			transition: all 700ms;
 		}
 
@@ -58,6 +93,7 @@ ul.list{
 }
 
 .card{
+	background-color: $card-background !important;
 	img.d-flex{
 		width: 100%;
 		height: 150px;
@@ -66,11 +102,11 @@ ul.list{
 		
 		a{
 			text-decoration: none;
-			color: white;
+			color: $color4;
 		}
 	
 		a:hover{
-			border-bottom: 3px solid $brown;
+			border-bottom: 3px solid $color3;
 			transition: all 700ms;
 		}
 	
@@ -78,6 +114,7 @@ ul.list{
 	p.card-text{
 		font-size: 1rem !important;
 		margin-bottom: 0.75rem;
+		color: $color4;
 	}
 }
 
@@ -87,9 +124,6 @@ ul.list{
 	box-shadow: 2px 4px 1px #ccc;
 }
 
-.navbar-nav a.active{
-	border-bottom: 3px solid $brown !important;
-}
 .navbar .navbar-nav > li{
 	margin-right: 15px;
 }
@@ -100,17 +134,22 @@ ul.list{
 	height: 300px;
 }
 
+.img-notice{
+	height: 200px;
+	width: 200px;
+}
 
+.dotdot{
+	height: 130px;
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+	width: 100%;
+}
 
-.navbar-nav {
-	li 
-		{
-			a:hover{
-				border-bottom: 3px solid $brown;
-				transition: all 700ms;
-		}
-	}
-} 
+.bb{
+	border-bottom: 4px solid $color3 !important;
+}
+
 
 .button_transition{
 	padding: 10px;
@@ -121,6 +160,14 @@ ul.list{
 	transition: border 2s, border-radius 500ms, background 5s;
 	display: block;
 	width: 100px;
+}
+
+.news-image{
+	height: 300px;
+}
+
+.background-notice{
+	background-color: lighten($backgroung-color, $amount: 8) !important;
 }
 
 .button_transition:hover{
@@ -198,3 +245,4 @@ span.op{
 		transform: rotate(360deg);
 	}
 }
+

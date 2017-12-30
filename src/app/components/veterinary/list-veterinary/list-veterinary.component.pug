@@ -1,0 +1,22 @@
+h3 {{title}}
+
+	.row
+		.col-md-5.col-sm-12.col-lg-4("*ngFor"="let veterinary of veterinaries")
+			.card.mb-3
+					a.card-img-top("[routerLink]"="['/veterinary/detail/' , veterinary._id]") 
+						img.d-flex.float-left(src="{{url + '/get-image-file-veterinary/' + veterinary.image}}" alt="{{veterinary.name}}")
+					.card-header
+						h5.card-title 
+							label.fa.fa-hospital-o.mr-2
+							a("[routerLink]"="['/veterinary/detail/' , veterinary._id]") {{veterinary.name}}
+					.card-body
+						p.card-text
+							label.fa.fa-phone.mr-2
+							| {{veterinary.phone}}
+						p.card-text
+							label.fa.fa-envelope-o.mr-2
+							| {{veterinary.email}}
+						p.card-text  
+							label.fa.fa-address-card-o.mr-2
+							| {{veterinary.adress}}
+						a.btn.btn-warning("[routerLink]"="['/veterinary/edit/' , veterinary._id]" "*ngIf"="identity.role == 'ROLE_ADMIN'") Editar Veterinaria

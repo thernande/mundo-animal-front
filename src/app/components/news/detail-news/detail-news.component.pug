@@ -1,0 +1,9 @@
+.row.background-notice
+	.col-12
+		
+		h2 
+			strong {{news.title}}
+
+		img.d-flex.img-responsive.btn-block.news-image(src="{{url + '/get-image-file-news/' + news.image}}" alt="Imagen")
+
+		div("[innerHtml]"="news.description")

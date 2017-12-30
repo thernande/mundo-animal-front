@@ -1,0 +1,14 @@
+.background-notice
+	h3
+		strong {{titlePage}}
+
+	div(class="alert alert-{{status}}" "*ngIf"="status") {{message}}
+
+	.col-12("*ngFor"="let notice of news")
+		.media.py-2.bb
+			img.d-flex.float-left.img-notice.mr-1(src="{{url + '/get-image-file-news/' + notice.image}}" alt="{{notice.name}}")
+			.media-body
+				h5 {{notice.title}}
+				.dotdot("[innerHTML]"="notice.description")
+				a.btn.btn-outline-success.btn-block("[routerLink]"="['/news/detail/', notice._id]") Leer Mas
+				a.btn.btn-warning.btn-block("[routerLink]"="['/news/edit/', notice._id]" "*ngIf"="identity.role == 'ROLE_ADMIN'") Editar Noticia

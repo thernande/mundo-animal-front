@@ -1,0 +1,29 @@
+div(class="alert alert-{{status}}" "*ngIf"="status") {{message}}
+.container
+    h1 {{title}}
+        .row
+            .col-12
+
+                .carousel.slide.mb-5(id="slider" data-ride="carousel")
+                    ol.carousel-indicators
+                        li.active(data-target="#slider" data-slide-to="0")
+                        li(data-target="#slider" data-slide-to="1")
+                        li(data-target="#slider" data-slide-to="2")
+                
+                    .carousel-inner(role="listbox")
+                            .carousel-item.active("*ngFor"="let notice of news | slice:0:1")
+                                img.d-block.img-fluid(src="{{url + '/get-image-file-news/' + notice.image}}" alt="image")
+                                .carousel-caption.d-none.d-md-block
+                                    h3 {{notice.title}}
+
+                            .carousel-item("*ngFor"="let notice of news | slice:1:3 ; let i = index")
+                                img.d-block.img-fluid.all-screen(src="{{url + '/get-image-file-news/' + notice.image}}" alt="image")
+                                .carousel-caption.d-none.d-md-block
+                                    h3 {{notice.title}}
+                
+                    a.carousel-control-prev(href="#slider" data-slide="prev")
+                        span.fa.fa-arrow-circle-o-left
+
+                    a.carousel-control-next(href="#slider" data-slide="next")
+                        span.fa.fa-arrow-circle-o-right
+

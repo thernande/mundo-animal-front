@@ -10,15 +10,11 @@ import { UserService } from '../../services/user.service';
   providers: [ VeterinaryService, UserService ]
 })
 export class VeterinaryComponent implements OnInit {
-  public veterinary: Veterinary[];
-  public title: string;
   public identity;
 
   constructor(
-    private _veterinaryService: VeterinaryService,
     private _userService: UserService
   ) {
-    this.title = "Directorio";
     this.identity = this._userService.getIdentity();
    }
 
